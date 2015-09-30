@@ -35,4 +35,9 @@ astroid-python
 logilab-common-python
 mccabe-python
 flake8-python
+pyflakes-python
+pep8
+linecache2-python
+ecdsa-python
+pycrypto-python
 
