@@ -4,7 +4,7 @@
 #
 Name     : python-mistralclient
 Version  : 1.2.0
-Release  : 2
+Release  : 3
 URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-1.2.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-1.2.0.tar.gz
 Summary  : Mistral Client Library
@@ -21,19 +21,14 @@ BuildRequires : cliff-python
 BuildRequires : cmd2-python
 BuildRequires : debtcollector-python
 BuildRequires : docutils-python
-BuildRequires : ecdsa-python
 BuildRequires : extras
 BuildRequires : extras-python
 BuildRequires : fixtures-python
 BuildRequires : flake8-python
-BuildRequires : funcsigs-python
 BuildRequires : hacking
-BuildRequires : httplib2
-BuildRequires : iso8601-python
 BuildRequires : jsonpatch-python
 BuildRequires : jsonpointer-python
 BuildRequires : jsonschema-python
-BuildRequires : lazy-object-proxy-python
 BuildRequires : linecache2-python
 BuildRequires : logilab-common-python
 BuildRequires : mccabe-python
@@ -43,18 +38,13 @@ BuildRequires : netifaces-python
 BuildRequires : nose-python
 BuildRequires : os-client-config-python
 BuildRequires : os-testr-python
-BuildRequires : oslo.config
 BuildRequires : oslo.log-python
-BuildRequires : oslo.serialization-python
-BuildRequires : oslo.utils-python
 BuildRequires : paramiko-python
 BuildRequires : pbr
 BuildRequires : pep8
 BuildRequires : pip
 BuildRequires : pluggy
-BuildRequires : prettytable
 BuildRequires : py-python
-BuildRequires : pycrypto-python
 BuildRequires : pyflakes-python
 BuildRequires : pylint-python
 BuildRequires : pyparsing-python
@@ -71,7 +61,6 @@ BuildRequires : python-openstackclient-python
 BuildRequires : requests-python
 BuildRequires : setuptools
 BuildRequires : simplejson
-BuildRequires : stevedore
 BuildRequires : tempest-lib-python
 BuildRequires : testtools
 BuildRequires : testtools-python
