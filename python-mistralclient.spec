@@ -4,7 +4,7 @@
 #
 Name     : python-mistralclient
 Version  : 1.2.0
-Release  : 5
+Release  : 6
 URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-1.2.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-1.2.0.tar.gz
 Summary  : Mistral Client Library
@@ -36,6 +36,7 @@ BuildRequires : msgpack-python-python
 BuildRequires : netaddr
 BuildRequires : netifaces-python
 BuildRequires : nose-python
+BuildRequires : openstacksdk
 BuildRequires : os-client-config-python
 BuildRequires : os-testr-python
 BuildRequires : oslo.log-python
@@ -107,7 +108,7 @@ python2 setup.py build -b py2
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test ||
+PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test
 %install
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot}
