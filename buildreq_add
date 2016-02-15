@@ -54,3 +54,4 @@ tox
 unittest2-python
 virtualenv
 warlock-python
+openstacksdk
