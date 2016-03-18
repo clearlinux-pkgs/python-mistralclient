@@ -1,6 +1,6 @@
-From 99899d0022d9df836df168915aebd835d8906750 Mon Sep 17 00:00:00 2001
+From 54d4ad2fa57b3326d8cc6a0947b1d606170294b8 Mon Sep 17 00:00:00 2001
 From: Alberto Murillo <alberto.murillo.silva@intel.com>
-Date: Mon, 28 Dec 2015 11:38:59 -0600
+Date: Thu, 17 Mar 2016 19:26:38 -0600
 Subject: [PATCH] test
 
 ---
@@ -8,18 +8,18 @@ Subject: [PATCH] test
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/test-requirements.txt b/test-requirements.txt
-index 37135eb..b9ed3d1 100644
+index 2696056..0561f58 100644
 --- a/test-requirements.txt
 +++ b/test-requirements.txt
 @@ -2,7 +2,7 @@
  # of appearance. Changing the order has an impact on the overall integration
  # process, which may cause wedges in the gate later.
  hacking<0.11,>=0.10
--pylint==1.4.4 # GNU GPL v2
+-pylint==1.4.5 # GNU GPL v2
 +pylint
- sphinx!=1.2.0,!=1.3b1,<1.3,>=1.1.2
- unittest2
- fixtures>=1.3.1
+ sphinx!=1.2.0,!=1.3b1,<1.3,>=1.1.2 # BSD
+ unittest2 # BSD
+ fixtures>=1.3.1 # Apache-2.0/BSD
 -- 
 2.5.0
 

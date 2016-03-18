@@ -1,9 +1,37 @@
 CHANGES
 =======
 
+2.0.0
+-----
+
+* Functional tests for workflow sharing
+* Fix show member error
+* Updated from global requirements
+* Support resource sharing CLI
+* Updated from global requirements
+* Support workflow id for execution CLI
+* Updated from global requirements
+* Support ID for workflow operations in CLI
+* Support workflow id for cron trigger creation
+* Add task_execution_id to workflow execution in CLI
+* Updated from global requirements
+* Updated from global requirements
+* Fix db error when running python34 unit tests
+* Add env option to CLI for executions and tasks update
+* Updated from global requirements
+* Updated from global requirements
+* Drop py33 support
+* Updated from global requirements
+* Updated from global requirements
+* Pass environment variables of proxy to tox
+* Updated from global requirements
+* Delete python bytecode before every test run
+* Remove py26 support
+
 1.2.0
 -----
 
+* Updated from global requirements
 * Introduce openstackclient plugin
 * Show project id when retrieving workflow(s)
 * Show workflow_id when getting workflow(s)
