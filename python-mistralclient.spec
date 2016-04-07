@@ -4,7 +4,7 @@
 #
 Name     : python-mistralclient
 Version  : 2.0.0
-Release  : 7
+Release  : 8
 URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.0.0.tar.gz
 Summary  : Mistral Client Library
@@ -57,13 +57,14 @@ BuildRequires : python-mimeparse-python
 BuildRequires : python-mock-python
 BuildRequires : python-novaclient-python
 BuildRequires : python-openstackclient-python
+BuildRequires : python3-dev
 BuildRequires : requests-python
 BuildRequires : setuptools
 BuildRequires : tempest-lib-python
 BuildRequires : testtools
 BuildRequires : testtools-python
 BuildRequires : tox
-BuildRequires : unittest2
+BuildRequires : unittest2-python
 BuildRequires : virtualenv
 Patch1: 0001-test.patch
 
@@ -99,6 +100,7 @@ python components for the python-mistralclient package.
 
 %build
 python2 setup.py build -b py2
+python3 setup.py build -b py3
 
 %check
 export http_proxy=http://127.0.0.1:9/
@@ -108,6 +110,7 @@ PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test
 %install
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot}
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 
 %files
 %defattr(-,root,root,-)

@@ -33,6 +33,7 @@ pyparsing-python
 py-python
 pyrsistent-python
 pytest
+python3-dev
 python-cinderclient-python
 python-dev
 python-glanceclient-python
@@ -49,5 +50,5 @@ tempest-lib-python
 testtools
 testtools-python
 tox
-unittest2
+unittest2-python
 virtualenv
