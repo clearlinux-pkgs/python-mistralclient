@@ -4,7 +4,7 @@
 #
 Name     : python-mistralclient
 Version  : 2.0.0
-Release  : 9
+Release  : 10
 URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.0.0.tar.gz
 Summary  : Mistral Client Library
