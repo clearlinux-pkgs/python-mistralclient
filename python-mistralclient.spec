@@ -4,7 +4,7 @@
 #
 Name     : python-mistralclient
 Version  : 2.0.0
-Release  : 11
+Release  : 12
 URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.0.0.tar.gz
 Summary  : Mistral Client Library
@@ -19,12 +19,15 @@ BuildRequires : Sphinx-python
 BuildRequires : astroid-python
 BuildRequires : cliff-python
 BuildRequires : cmd2-python
+BuildRequires : configparser-python
 BuildRequires : docutils-python
+BuildRequires : enum34-python
 BuildRequires : extras
 BuildRequires : extras-python
 BuildRequires : fixtures-python
 BuildRequires : flake8-python
 BuildRequires : hacking
+BuildRequires : imagesize-python
 BuildRequires : jsonpatch-python
 BuildRequires : jsonpointer-python
 BuildRequires : jsonschema-python
@@ -99,14 +102,10 @@ python components for the python-mistralclient package.
 %patch1 -p1
 
 %build
+export LANG=C
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
-%check
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test
 %install
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot}
