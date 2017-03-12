@@ -4,7 +4,7 @@
 #
 Name     : python-mistralclient
 Version  : 2.0.0
-Release  : 12
+Release  : 13
 URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.0.0.tar.gz
 Summary  : Mistral Client Library
@@ -12,63 +12,18 @@ Group    : Development/Tools
 License  : Apache-2.0
 Requires: python-mistralclient-bin
 Requires: python-mistralclient-python
-BuildRequires : Jinja2
-BuildRequires : PyYAML-python
-BuildRequires : Pygments
-BuildRequires : Sphinx-python
-BuildRequires : astroid-python
-BuildRequires : cliff-python
-BuildRequires : cmd2-python
+Requires: PyYAML
+Requires: cliff
+Requires: pbr
+Requires: python-keystoneclient
+Requires: python-openstackclient
+Requires: requests
 BuildRequires : configparser-python
-BuildRequires : docutils-python
-BuildRequires : enum34-python
-BuildRequires : extras
-BuildRequires : extras-python
-BuildRequires : fixtures-python
-BuildRequires : flake8-python
-BuildRequires : hacking
-BuildRequires : imagesize-python
-BuildRequires : jsonpatch-python
-BuildRequires : jsonpointer-python
-BuildRequires : jsonschema-python
-BuildRequires : linecache2-python
-BuildRequires : logilab-common-python
-BuildRequires : mccabe-python
-BuildRequires : msgpack-python-python
-BuildRequires : nose-python
-BuildRequires : openstacksdk-python
-BuildRequires : os-client-config-python
-BuildRequires : os-testr-python
-BuildRequires : oslo.log-python
-BuildRequires : paramiko-python
 BuildRequires : pbr
-BuildRequires : pep8
 BuildRequires : pip
-BuildRequires : pluggy
-BuildRequires : py-python
-BuildRequires : pyflakes-python
-BuildRequires : pyinotify-python
-BuildRequires : pylint-python
-BuildRequires : pyparsing-python
-BuildRequires : pyrsistent-python
-BuildRequires : pytest
-BuildRequires : python-cinderclient-python
 BuildRequires : python-dev
-BuildRequires : python-glanceclient-python
-BuildRequires : python-keystoneclient-python
-BuildRequires : python-mimeparse-python
-BuildRequires : python-mock-python
-BuildRequires : python-novaclient-python
-BuildRequires : python-openstackclient-python
 BuildRequires : python3-dev
-BuildRequires : requests-python
 BuildRequires : setuptools
-BuildRequires : tempest-lib-python
-BuildRequires : testtools
-BuildRequires : testtools-python
-BuildRequires : tox
-BuildRequires : unittest2-python
-BuildRequires : virtualenv
 Patch1: 0001-test.patch
 
 %description
@@ -87,11 +42,6 @@ bin components for the python-mistralclient package.
 %package python
 Summary: python components for the python-mistralclient package.
 Group: Default
-Requires: PyYAML-python
-Requires: cliff-python
-Requires: python-keystoneclient-python
-Requires: python-openstackclient-python
-Requires: requests-python
 
 %description python
 python components for the python-mistralclient package.
@@ -103,13 +53,15 @@ python components for the python-mistralclient package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1489334377
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
+export SOURCE_DATE_EPOCH=1489334377
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files
 %defattr(-,root,root,-)
