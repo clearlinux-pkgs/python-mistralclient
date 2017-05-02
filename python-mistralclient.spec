@@ -6,7 +6,7 @@
 #
 Name     : python-mistralclient
 Version  : 3.0.0
-Release  : 14
+Release  : 15
 URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.0.tar.gz
 Source99 : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.0.tar.gz.asc
