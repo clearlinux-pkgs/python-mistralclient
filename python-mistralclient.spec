@@ -6,7 +6,7 @@
 #
 Name     : python-mistralclient
 Version  : 3.0.0
-Release  : 15
+Release  : 16
 URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.0.tar.gz
 Source99 : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.0.tar.gz.asc
@@ -14,6 +14,8 @@ Summary  : Mistral Client Library
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: python-mistralclient-bin
+Requires: python-mistralclient-python3
+Requires: python-mistralclient-license
 Requires: python-mistralclient-python
 Requires: PyYAML
 Requires: cliff
@@ -25,49 +27,70 @@ Requires: python-keystoneclient
 Requires: requests
 Requires: six
 Requires: stevedore
+BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
 %description
-========================
 Team and repository tags
-========================
-.. image:: http://governance.openstack.org/badges/python-mistralclient.svg
-:target: http://governance.openstack.org/reference/tags/index.html
+        ========================
 
 %package bin
 Summary: bin components for the python-mistralclient package.
 Group: Binaries
+Requires: python-mistralclient-license
 
 %description bin
 bin components for the python-mistralclient package.
 
 
+%package license
+Summary: license components for the python-mistralclient package.
+Group: Default
+
+%description license
+license components for the python-mistralclient package.
+
+
 %package python
 Summary: python components for the python-mistralclient package.
 Group: Default
+Requires: python-mistralclient-python3
 
 %description python
 python components for the python-mistralclient package.
+
+
+%package python3
+Summary: python3 components for the python-mistralclient package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the python-mistralclient package.
 
 
 %prep
 %setup -q -n python-mistralclient-3.0.0
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1489856029
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1532526084
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1489856029
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+mkdir -p %{buildroot}/usr/share/doc/python-mistralclient
+cp LICENSE %{buildroot}/usr/share/doc/python-mistralclient/LICENSE
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
@@ -76,7 +99,13 @@ python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 %defattr(-,root,root,-)
 /usr/bin/mistral
 
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/python-mistralclient/LICENSE
+
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python2*/*
+
+%files python3
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
