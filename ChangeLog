@@ -1,6 +1,162 @@
 CHANGES
 =======
 
+3.7.0
+-----
+
+* Clarify details about the target cacert parameter
+* Add missing \`--public\` option to workbook api
+* Add the root execution ID to the CLI output
+* Add missing oslo.serialization requirement
+
+3.6.1
+-----
+
+* Fixing region filter for getting workflow endpoint
+* Add release note link in README
+* Add the restructuredtext check to the flake8 job
+
+3.6.0
+-----
+
+* Remove PyPI downloads
+* Fix force parameter being always added to URL in execution delete
+* Add --export option to environment-get
+* Revert "Adding environment-get-definition for easy environment-update"
+* fix tox python3 overrides
+* Switch to using stestr
+* Update task columns info
+* Add namespace parameter to workflow-get and workflow-get-definition
+* Adding environment-get-definition for easy environment-update
+
+3.5.0
+-----
+
+* Trivial: Update pypi url to new url
+* Do not let keystoneauth mask the errors
+* Add the force parameter to delete executions
+
+3.4.0
+-----
+
+* add lower-constraints job
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Add the scope attribute in workflow list
+* Updated from global requirements
+* Updated from global requirements
+* Clean imports in code
+* Updated from global requirements
+* Add TripleO jobs for mistral client
+* Don't override session during auth
+* Fix a race condition with execution creation
+* Remove broken tox-cover job
+* Update reno for stable/queens
+* Running new workflow based on existing execution
+
+3.2.0
+-----
+
+* Clean up keystone authentication
+* Restore devstack job for python-mistralclient
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Avoid tox\_install.sh for constraints support
+* Fix limit handling to not send value of -1
+* Remove setting of version/release from releasenotes
+* Updated from global requirements
+* Updated from global requirements
+* Support no\_auth mode in mistral client
+* Fix several problems in keycloak auth module
+* Don't create client for help and bash completion
+* Remove "insecure" in token-based authentication
+* Updated from global requirements
+* Fix a typo in env variable name
+* Add default values for domain related options
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Enable ssl support for keycloak auth module
+* Support for Project\_domain\_id and user\_domain\_id
+* Updated from global requirements
+* Updated from global requirements
+* Namespaces release note
+* Create and run a workflow within a namespace
+* Updated from global requirements
+* Task list now only queries the displayed fields
+* Use keystoneauth plugins and session instead of keystoneclient
+* Fix how "--limit" is passed to the server for action executions
+* mistral execution-list -f value should be empty
+* Add test for target parameters and fix requests lib error
+* Update reno for stable/pike
+* Updated from global requirements
+* Make README better
+
+3.1.1
+-----
+
+* String interpolation should be delayed
+* Give better tox output
+* Apply Pike document structure
+* Updated from global requirements
+* Update and optimize documentation links
+* Enable warning-is-error in doc build
+* Updated from global requirements
+* Add CLI for event trigger operations
+* Set the default value of --limit parameter
+* Switch from oslosphinx to openstackdocstheme
+* Updated from global requirements
+* Enable some off-by-default checks
+* Make --profile load from environment variables
+* Updated from global requirements
+* Updated from global requirements
+* Replace request mocking in test\_httpclient with requests-mock
+* Updated from global requirements
+* Updated from global requirements
+* Change service type to workflowv2
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Add a missing space to the help message for execution-create
+* fix release note formatting
+* Explicitly set 'builders' option
+* doc: Remove cruft from conf.py
+* Fix doc generation for python 3
+
+3.1.0
+-----
+
+* Updated from global requirements
+* Optimize the link address
+* Add release note for region name bugfix
+* Take DST into account when converting to UTC
+* Fix region support in mistralclient
+* Update the gitingore
+* Remove log translations
+* Use session from OSC plugin
+* Accept keystone session in client
+* Use generic keystone client instead of versioned
+* Add --utc flag to cron trigger create
+* Updated from global requirements
+* Update test requirement
+* Updated from global requirements
+* Remove support for py34
+* Updated from global requirements
+* Updated from global requirements
+* Add project\_id and project\_name options
+* Read project\_id and project\_name in env
+* Update reno for stable/ocata
+* Format the list of auth types in the Mistral client help
+* Added link for modindex
+* Fix doc build if git is absent
+* Changed the README.rst
+
 3.0.0
 -----
 
@@ -27,7 +183,7 @@ CHANGES
 * Show team and repo badges on README
 * Updated tox.ini to pick up requirements from upper constraints
 * Region name related command line arguments are added
-* Replace uuid4() with generate_uuid() from oslo_utils
+* Replace uuid4() with generate\_uuid() from oslo\_utils
 * Removing deprecation warnings to pass py35
 * Removed the extra space from tox.ini
 * Updated from global requirements
@@ -58,7 +214,7 @@ CHANGES
 * Enable release notes translation
 * Updated from global requirements
 * Expose the --run-sync Action Execution parameter on the CLI
-* Added the # -*- coding: utf-8 -*- to the conf.py
+* Added the # -\*- coding: utf-8 -\*- to the conf.py
 * Updated from global requirements
 * Updated from global requirements
 * Send access info to server
@@ -69,17 +225,17 @@ CHANGES
 * Trivial: Remove vim header from source files
 * Remove clashes of openstackclient command in mistral
 * Abstract authentication function
-* Add 'created_at' and 'updated_at' to action-execution-get and action-execution-list command Closes-bug: 1618767 Change-Id: I422fdcdfa66d6b7a781542c7acc458f8c46edb18
+* Add 'created\_at' and 'updated\_at' to action-execution-get and action-execution-list command Closes-bug: 1618767 Change-Id: I422fdcdfa66d6b7a781542c7acc458f8c46edb18
 * Added sphinix config to setup.cfg
 * Updated from global requirements
-* Add 'created_at' and 'updated_at' to task-get command
+* Add 'created\_at' and 'updated\_at' to task-get command
 * Pass httpclient to managers
 * Use requests-mock for testing
 * Use oslotest instead of testtools/unittest
 * Fixing auth for keystone v2.0
 * Fix wrong error message for environment operation
 * Make osprofiler dependency really "soft"
-* Fixing getting mistral_url from keystone catalog
+* Fixing getting mistral\_url from keystone catalog
 
 2.1.1
 -----
@@ -95,11 +251,11 @@ CHANGES
 * Updated from global requirements
 * Updated from global requirements
 * Added ID option to update Action Definition
-* Add error message when OS_USERNAME or OS_PASSWORD not provided
-* Add target-* parameters to python-mistralclient
+* Add error message when OS\_USERNAME or OS\_PASSWORD not provided
+* Add target-\* parameters to python-mistralclient
 * Different formatters for "action-execution-get" and "action-execution-list"
 * Add "Task ID" field for "action-execution-get" command output
-* Remove usage of private '_url' property from OSC
+* Remove usage of private '\_url' property from OSC
 * Add cancelled state to executions
 * Added 'pip install -r requirements.txt' instruction
 * Updated from global requirements
@@ -109,10 +265,10 @@ CHANGES
 * Updated from global requirements
 * Add KeyCloak OpenID Connect authentication
 * Updated from global requirements
-* Use osc_lib instead of cliff
+* Use osc\_lib instead of cliff
 * Use osc-lib instead of openstackclient
 * Updated from global requirements
-* Removed use of tempest_lib and used tempest instead
+* Removed use of tempest\_lib and used tempest instead
 * Updated from global requirements
 * Remove .mailmap since it's no longer needed
 * Updated from global requirements
@@ -144,7 +300,7 @@ CHANGES
 * Updated from global requirements
 * Support ID for workflow operations in CLI
 * Support workflow id for cron trigger creation
-* Add task_execution_id to workflow execution in CLI
+* Add task\_execution\_id to workflow execution in CLI
 * Updated from global requirements
 * Updated from global requirements
 * Fix db error when running python34 unit tests
@@ -165,15 +321,15 @@ CHANGES
 * Updated from global requirements
 * Introduce openstackclient plugin
 * Show project id when retrieving workflow(s)
-* Show workflow_id when getting workflow(s)
-* Add post_test_hook script that will run tests on the gate
+* Show workflow\_id when getting workflow(s)
+* Add post\_test\_hook script that will run tests on the gate
 * Fix all H201 pep8 errors
 * Adding --insecure flag
 * Make help message of execution pagination query more readable
 * Create pagination for the mistral client
 * Wrapped long lines in the "Tags" column
 * Truncate 'input' data in the wf/action update command output
-* Changing attribute of run_tests script
+* Changing attribute of run\_tests script
 * Added home-page link in setup.cfg file
 * Fix dict ordering issue in action executions CLI test
 * Updated from global requirements
@@ -192,7 +348,7 @@ CHANGES
 * Output format is corrected for wf-validate and wb-validate
 * Adding pagination support to mistral python client
 * Added some tests for environment
-* Default auth_url is set, if it is not provided
+* Default auth\_url is set, if it is not provided
 * Updated from global requirements
 
 1.1.0
@@ -209,8 +365,8 @@ CHANGES
 
 * Remove invalid test case of mistralclient
 * Updated from global requirements
-* Fix failure of run_action CLI command
-* Support action_execution deletion on client side
+* Fix failure of run\_action CLI command
+* Support action\_execution deletion on client side
 * Fixing dict ordering issue in task tests
 * Update README.md for project namespace and repo change
 * Add service API support in client side
@@ -221,9 +377,9 @@ CHANGES
 * Add CLI for rerunning failed task execution
 * Add python 3 classifiers
 * Fix PY3 compatibility
-* Adding to_dict() method to Resource class
+* Adding to\_dict() method to Resource class
 * Changing check of mistral availability in functional tests
-* User 'alt_demo' user instead of 'demo' for cli tests
+* User 'alt\_demo' user instead of 'demo' for cli tests
 * Fixing launching mistralclient tests
 * Configure logging with debug flag
 
@@ -249,7 +405,7 @@ CHANGES
 * Modified help display format to present a more user-friendly display
 * Update commands bash completion script
 * Adding 'Task name' in Action Execution CLI
-* Fixing state_info column in CLI
+* Fixing state\_info column in CLI
 * Delete requirement on unneeded arguments
 
 2015.1.0rc1
@@ -267,16 +423,16 @@ CHANGES
 * Add action execution client lib and CLI
 * Fix failing after refactoring CLI test for execution
 * Trigger remaining-executions and first-exec-date
-* Rename execution_id to workflow_execution_id
+* Rename execution\_id to workflow\_execution\_id
 * add bash completion script
 
 2015.1.0b3
 ----------
 
-* Refactor task output: "wf_name" -> "workflow_name"
+* Refactor task output: "wf\_name" -> "workflow\_name"
 * Deleting command 'get-task-output' from CLI
 * Adjust all test examples in mistralclient
-* Import 'decorators' from tempest_lib instead of 'test' from tempest
+* Import 'decorators' from tempest\_lib instead of 'test' from tempest
 * Add support for auth against keystone on https
 * Fix tempest gate, add tempest import
 * Add tests which check env isolation
@@ -315,7 +471,7 @@ CHANGES
 * Provide workflow input
 * Adjust action commands (CLI)
 * Add script to run functional CLI and client tests locally
-* Fix 'is_system' property in action commands
+* Fix 'is\_system' property in action commands
 * Refactoring CLI commands returning lists
 * Adding 'tags' to actions
 * Update requirements according to global requirements (master)
@@ -346,14 +502,14 @@ CHANGES
 * Work toward Python 3.4 support and testing
 * Move integration tests under mistralclient/tests folder
 * Add negative tests for CLI
-* Fix failing 'get_task' test
+* Fix failing 'get\_task' test
 * Add CLI tests for workbook, execution and task
 * Add simple tests for Mistral CLI
 * Remove unneeded definitions of Python Source Code Encoding
 * Fix typo in base.py
 * Fix path to integrational tests
 * Support v2 Keystone API in client
-* Override configure_logging to quieten iso8601 and requests
+* Override configure\_logging to quieten iso8601 and requests
 * Add integrational tests for executions and tasks
 * Add integration tests (actions with workbooks)
 * Update requirements due to global-requirements
@@ -368,7 +524,7 @@ CHANGES
 * Update openstack/common code
 * Don't use oslo logging in the client
 * change assertEquals to assertEqual
-* "target_task" -> "task" in tests
+* "target\_task" -> "task" in tests
 * cleaning up index.rst file
 * Handle error from upload definition command
 * Rename Target to Task in execution format
@@ -397,7 +553,7 @@ CHANGES
 * Made keystone authentication optional
 * Add command-line interface
 * Add context parameter in execution creation
-* Rename "target_task" to "task"
+* Rename "target\_task" to "task"
 * Adding changes related to Data Flow
 * Fix installation with requirements
 * Moving Mistral Client code from main Mistral repository
