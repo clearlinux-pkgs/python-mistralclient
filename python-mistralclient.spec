@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : python-mistralclient
-Version  : 3.8.1
-Release  : 20
-URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.8.1.tar.gz
-Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.8.1.tar.gz
-Source99 : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.8.1.tar.gz.asc
+Version  : 3.9.0
+Release  : 21
+URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.9.0.tar.gz
+Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.9.0.tar.gz
+Source99 : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.9.0.tar.gz.asc
 Summary  : Mistral Client Library
 Group    : Development/Tools
 License  : Apache-2.0
@@ -84,14 +84,14 @@ python3 components for the python-mistralclient package.
 
 
 %prep
-%setup -q -n python-mistralclient-3.8.1
+%setup -q -n python-mistralclient-3.9.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1557932885
+export SOURCE_DATE_EPOCH=1558019428
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
