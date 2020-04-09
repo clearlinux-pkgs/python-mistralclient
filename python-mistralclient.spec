@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x4F398DEAE440091C (infra-root@openstack.org)
 #
 Name     : python-mistralclient
-Version  : 4.0.0
-Release  : 28
-URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.0.0.tar.gz
-Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.0.0.tar.gz
-Source1  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.0.0.tar.gz.asc
+Version  : 4.0.1
+Release  : 29
+URL      : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.0.1.tar.gz
+Source0  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.0.1.tar.gz
+Source1  : http://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.0.1.tar.gz.asc
 Summary  : Mistral Client Library
 Group    : Development/Tools
 License  : Apache-2.0
@@ -42,8 +42,11 @@ BuildRequires : six
 BuildRequires : stevedore
 
 %description
+========================
 Team and repository tags
-        ========================
+========================
+.. image:: https://governance.openstack.org/tc/badges/python-mistralclient.svg
+:target: https://governance.openstack.org/tc/reference/tags/index.html
 
 %package bin
 Summary: bin components for the python-mistralclient package.
@@ -76,32 +79,33 @@ Summary: python3 components for the python-mistralclient package.
 Group: Default
 Requires: python3-core
 Provides: pypi(python_mistralclient)
-Requires: pypi(cliff)
-Requires: pypi(keystoneauth1)
-Requires: pypi(osc_lib)
-Requires: pypi(oslo.i18n)
-Requires: pypi(oslo.serialization)
-Requires: pypi(oslo.utils)
 Requires: pypi(pbr)
-Requires: pypi(pyyaml)
 Requires: pypi(requests)
-Requires: pypi(six)
 Requires: pypi(stevedore)
+Requires: pypi(osc_lib)
+Requires: pypi(oslo.utils)
+Requires: pypi(six)
+Requires: pypi(pyyaml)
+Requires: pypi(oslo.serialization)
+Requires: pypi(cliff)
+Requires: pypi(oslo.i18n)
+Requires: pypi(keystoneauth1)
 
 %description python3
 python3 components for the python-mistralclient package.
 
 
 %prep
-%setup -q -n python-mistralclient-4.0.0
-cd %{_builddir}/python-mistralclient-4.0.0
+%setup -q -n python-mistralclient-4.0.1
+cd %{_builddir}/python-mistralclient-4.0.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583541604
+export SOURCE_DATE_EPOCH=1586447680
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -117,7 +121,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/python-mistralclient
-cp %{_builddir}/python-mistralclient-4.0.0/LICENSE %{buildroot}/usr/share/package-licenses/python-mistralclient/57aed0b0f74e63f6b85cce11bce29ba1710b422b
+cp %{_builddir}/python-mistralclient-4.0.1/LICENSE %{buildroot}/usr/share/package-licenses/python-mistralclient/57aed0b0f74e63f6b85cce11bce29ba1710b422b
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
